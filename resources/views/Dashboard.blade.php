@@ -60,7 +60,7 @@
     }
 </style>
     <!-- Google Font: Source Sans Pro -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro: 300, 400, 400i, 700&display=fallback">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,4001,700&display=fallback">
 
     <!-- Font Awesome Icons -->
     <link rel="stylesheet"
@@ -71,12 +71,29 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Boostrap 5 -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXXSR1GASXEV/Dwwykc2MPK8M2HN"
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" 
+        rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
         crossorigin="anonymous">
     </head>
 
     <body class="hold-transition sidebar-mini">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="staticBackdropLabel">Apakah ingin logout?</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="/">
+                        <button type="button" class="btn btn-danger">Logout</button>
+                    </a>
+                </div>
+                </div>
+            </div>
+        </div>
+
         <div class="wrapper">
 
         <!-- Navbar -->
@@ -91,7 +108,11 @@
         
         <!-- Right navbar links -->
         <ul class="navbar-nav ml-auto">
-            
+            <li>
+                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+                </button>
+            </li>
             <li class="nav-item">
                 <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                     <i class="fas fa-expand-arrows-alt"></i>
@@ -129,6 +150,12 @@
                             <p> Home</p>
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a href="{{ url('gyms/presensi') }}" class="nav-link">
+                            <i class="nav-icon fas fa-check"></i>
+                            <p> Presensi</p>
+                        </a>
+                    </li>
                 </ul>
             </nav>
         </div>
@@ -151,7 +178,7 @@
     <!-- Scripts -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-C6RzsynM9kWDrMNeT87bh950GNyZPhcTNXj1NW7RuBCsyN/o0j1pcV8Qyq46cDfL"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
         crossorigin="anonymous"></script>
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
 </body>

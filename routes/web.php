@@ -48,3 +48,56 @@ Route::get('/gyms/index', function () {
     ]
     ]);
 });
+
+Route::get('/gyms/presensi', function () {
+    return view('gyms.presensi', [
+    'instruktur' => 'Catherine',
+    'ruang' => 'Kelas B',
+    'totalMember' => [
+        [
+           'nama' => 'Luffy',
+           'email' => 'Luffy@gmail.com',
+           'noTelp' => '08123456789',
+           'jenisKartu' => 'Gold',
+           'metodePembayaran' => 'Hutang Teman',
+        ],
+        [
+           'nama' => 'Zoro',
+           'email' => 'Zoro@gmail.com',
+           'noTelp' => '08223456789',
+           'jenisKartu' => 'Silver',
+           'metodePembayaran' => 'Langsung Bayar',
+        ],
+        [
+            'nama' => 'Sanji',
+            'email' => 'Sanji@gmail.com',
+            'noTelp' => '08323456789',
+            'jenisKartu' => 'Black',
+            'metodePembayaran' => 'Hutang Teman',
+        ],
+        [
+            'nama' => 'Jimbe',
+            'email' => 'Jimbe@gmail.com',
+            'noTelp' => '08423456789',
+            'jenisKartu' => 'Black',
+            'metodePembayaran' => 'Shoppe pay later',
+        ],
+        [
+            'nama' => 'Usop',
+            'email' => 'Sanji@gmail.com',
+            'noTelp' => '08623456789',
+            'jenisKartu' => 'Gold',
+            'metodePembayaran' => 'Hutang Teman',
+        ],
+        [
+            'nama' => 'Brock',
+            'email' => 'Brock@gmail.com',
+            'noTelp' => '08133456789',
+            'jenisKartu' => 'Silver',
+            'metodePembayaran' => 'Shoppe pay later',
+        ],
+    ],
+    'rating' => '5',
+    'tanggal' => date('l, d F Y'),
+    ]);
+});
